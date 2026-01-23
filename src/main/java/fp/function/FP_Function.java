@@ -3,20 +3,20 @@ package fp.function;
 import java.util.Objects;
 
 @FunctionalInterface
-public interface Function<T, R> {
+public interface FP_Function<T, R> {
   R apply(T t);
 
-  default <V> Function<V, R> compose(Function<? super V, ? extends T> before) {
+  default <V> FP_Function<V, R> compose(FP_Function<? super V, ? extends T> before) {
     Objects.requireNonNull(before);
     return v -> apply(before.apply(v));
   }
 
-  default <V> Function<T, V> andThen(Function<? super R, ? extends V> after) {
+  default <V> FP_Function<T, V> andThen(FP_Function<? super R, ? extends V> after) {
     Objects.requireNonNull(after);
     return t -> after.apply(apply(t));
   }
 
-  static <T> Function<T, T> identity() {
+  static <T> FP_Function<T, T> identity() {
     return t -> t;
   }
 }

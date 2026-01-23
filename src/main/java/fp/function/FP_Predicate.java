@@ -3,24 +3,24 @@ package fp.function;
 import java.util.Objects;
 
 @FunctionalInterface
-public interface Predicate<T> {
+public interface FP_Predicate<T> {
   boolean test(T t);
 
-  default Predicate<T> and(Predicate<? super T> other) {
+  default FP_Predicate<T> and(FP_Predicate<? super T> other) {
     Objects.requireNonNull(other);
     return t -> test(t) && other.test(t);
   }
 
-  default Predicate<T> or(Predicate<? super T> other) {
+  default FP_Predicate<T> or(FP_Predicate<? super T> other) {
     Objects.requireNonNull(other);
     return t -> test(t) || other.test(t);
   }
 
-  default Predicate<T> negate() {
+  default FP_Predicate<T> negate() {
     return t -> !test(t);
   }
 
-  static <T> Predicate<T> isEqual(Object targetObject) {
+  static <T> FP_Predicate<T> isEqual(Object targetObject) {
     return t -> Objects.equals(targetObject, t);
   }
 }

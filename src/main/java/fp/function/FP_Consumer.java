@@ -3,10 +3,10 @@ package fp.function;
 import java.util.Objects;
 
 @FunctionalInterface
-public interface Consumer<T> {
+public interface FP_Consumer<T> {
   void accept(T t);
 
-  default Consumer<T> andThen(Consumer<? super T> other) {
+  default FP_Consumer<T> andThen(FP_Consumer<? super T> other) {
     Objects.requireNonNull(other);
     return t -> {
       accept(t);
