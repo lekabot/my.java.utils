@@ -57,15 +57,15 @@ public final class FP_Objects {
     return o == null;
   }
 
-  public static boolean isNotNull(Object o) {
+  public static boolean nonNull(Object o) {
     return o != null;
   }
 
-  public static <T> T requireNotNullElse(T o, T defO) {
+  public static <T> T requireNonNullElse(T o, T defO) {
     return o != null ? o : requireNonNull(defO, "defaultObject");
   }
 
-  public static <T> T requireNotNullElseGet(T o, FP_Supplier<? extends T> supplier) {
+  public static <T> T requireNonNullElseGet(T o, FP_Supplier<? extends T> supplier) {
     return o != null ? o : requireNonNull(requireNonNull(supplier, "supplier").get(), "supplier.get()");
   }
 
