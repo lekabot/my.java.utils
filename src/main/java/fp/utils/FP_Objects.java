@@ -70,7 +70,7 @@ public final class FP_Objects {
   }
 
   public static <T> T requireNonNull(T o, FP_Supplier<String> supplier) {
-    if (isNull(o)) {
+    if (o == null) {
       throw new NullPointerException(supplier == null ? null : supplier.get());
     }
     return o;

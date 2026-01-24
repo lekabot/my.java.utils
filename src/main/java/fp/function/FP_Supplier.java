@@ -1,6 +1,6 @@
 package fp.function;
 
-import java.util.Objects;
+import fp.utils.FP_Objects;
 
 @FunctionalInterface
 public interface FP_Supplier<T> {
@@ -15,7 +15,7 @@ public interface FP_Supplier<T> {
   }
 
   static <T> FP_Supplier<T> memoized(FP_Supplier<T> other) {
-    Objects.requireNonNull(other);
+    FP_Objects.requireNonNull(other);
 
     class State {
       volatile T value;

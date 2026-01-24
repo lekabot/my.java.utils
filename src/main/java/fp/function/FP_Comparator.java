@@ -1,6 +1,6 @@
 package fp.function;
 
-import java.util.Objects;
+import fp.utils.FP_Objects;
 
 @FunctionalInterface
 public interface FP_Comparator<T> {
@@ -14,7 +14,7 @@ public interface FP_Comparator<T> {
   }
 
   default FP_Comparator<T> thenComparing(FP_Comparator<? super T> other) {
-    Objects.requireNonNull(other);
+    FP_Objects.requireNonNull(other);
     return (t1, t2) -> {
       int res = compare(t1, t2);
       return res == 0 ? other.compare(t1, t2) : res;
