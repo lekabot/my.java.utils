@@ -2,8 +2,6 @@ package fp.function;
 
 import fp.utils.FP_Objects;
 
-import java.util.Objects;
-
 @FunctionalInterface
 public interface FP_Predicate<T> {
   boolean test(T t);
@@ -23,6 +21,6 @@ public interface FP_Predicate<T> {
   }
 
   static <T> FP_Predicate<T> isEqual(Object targetObject) {
-    return t -> Objects.equals(targetObject, t);
+    return t -> FP_Objects.equals(targetObject, t);
   }
 }

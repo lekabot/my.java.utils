@@ -21,5 +21,9 @@ public interface FP_Comparator<T> {
     };
   }
 
-//  default FP_Comparator<T> thenComparing(keyExtractor) Нужно сперва реализовтаь comparing
+
+//  static <T> <?> naturalOrder(Comparable<T> comparable) {
+//    return
+//  }
+
 }

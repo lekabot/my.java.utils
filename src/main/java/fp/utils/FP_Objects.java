@@ -1,9 +1,9 @@
 package fp.utils;
 
+import fp.function.FP_Comparator;
 import fp.function.FP_Supplier;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public final class FP_Objects {
   private FP_Objects() {
@@ -35,7 +35,7 @@ public final class FP_Objects {
     return o != null ? o.toString() : defValue;
   }
 
-  public static <T> int compare(T a, T b, Comparator<? super T> comparator) {
+  public static <T> int compare(T a, T b, FP_Comparator<? super T> comparator) {
     return a == b ? 0 : comparator.compare(a, b);
   }
 
